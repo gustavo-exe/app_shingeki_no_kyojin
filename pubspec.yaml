@@ -63,6 +63,9 @@ flutter:
    - assets/ejercito/exploracion.png
    - assets/ejercito/militar.png
    - assets/ejercito/guarnicion.png
+   - assets/personajes/eren.png
+   - assets/personajes/mikasa.png
+   - assets/personajes/levi.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ListExpand extends StatefulWidget {
@@ -33,6 +34,58 @@ class _ListExpandState extends State<ListExpand> {
           child: Divider(
             thickness: 1,
             color: Colors.white30,
+          ),
+        ),
+        Row(
+          children: [
+            Column(
+              children: [cardPersonaje("mikasa")],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Column(
+                children: [cardPersonaje("eren")],
+              ),
+            )
+          ],
+        ),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Column(
+                children: [cardPersonaje("levi")],
+              ),
+            )
+          ],
+        )
+      ]),
+    );
+  }
+
+  Widget cardPersonaje(String nombre) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8), color: Colors.black12),
+      height: 210,
+      width: (widthPantalla - (48)) * 0.50,
+      child: Column(children: [
+        Container(
+            //decoration: const BoxDecoration(boxShadow: BoxShadow(color: Colors.red, blurRadius: 8)),
+            child: ClipRRect(
+                child: Image.asset(
+          "assets/personajes/$nombre.png",
+          fit: BoxFit.cover,
+          height: 180,
+        ))),
+        Container(
+          width: (widthPantalla - (48)) * 0.50,
+          padding: const EdgeInsets.only(top: 4, bottom: 4, right: 4, left: 4),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(2), color: Colors.black12),
+          child: Text(
+            nombre[0].toUpperCase() + nombre.substring(1),
+            style: const TextStyle(fontSize: 18, color: Colors.white),
           ),
         )
       ]),
