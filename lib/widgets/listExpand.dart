@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:shingeki_no_kyojin/pages/detailPage.dart';
 
 class ListExpand extends StatefulWidget {
   const ListExpand({Key? key}) : super(key: key);
@@ -56,6 +57,12 @@ class _ListExpandState extends State<ListExpand> {
               child: Column(
                 children: [cardPersonaje("levi")],
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, top: 8),
+              child: Column(
+                children: [cardPersonaje('hange')],
+              ),
             )
           ],
         )
@@ -64,31 +71,44 @@ class _ListExpandState extends State<ListExpand> {
   }
 
   Widget cardPersonaje(String nombre) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8), color: Colors.black12),
-      height: 210,
-      width: (widthPantalla - (48)) * 0.50,
-      child: Column(children: [
-        Container(
-            //decoration: const BoxDecoration(boxShadow: BoxShadow(color: Colors.red, blurRadius: 8)),
-            child: ClipRRect(
-                child: Image.asset(
-          "assets/personajes/$nombre.png",
-          fit: BoxFit.cover,
-          height: 180,
-        ))),
-        Container(
-          width: (widthPantalla - (48)) * 0.50,
-          padding: const EdgeInsets.only(top: 4, bottom: 4, right: 4, left: 4),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(2), color: Colors.black12),
-          child: Text(
-            nombre[0].toUpperCase() + nombre.substring(1),
-            style: const TextStyle(fontSize: 18, color: Colors.white),
-          ),
-        )
-      ]),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) {
+            return DetailPage(
+              theColor: Colors.blueAccent,
+              image: "assets/personajes/$nombre.png",
+            );
+          }),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8), color: Colors.black12),
+        height: 210,
+        width: (widthPantalla - (48)) * 0.50,
+        child: Column(children: [
+          Container(
+              //decoration: const BoxDecoration(boxShadow: BoxShadow(color: Colors.red, blurRadius: 8)),
+              child: ClipRRect(
+                  child: Image.asset(
+            "assets/personajes/$nombre.png",
+            fit: BoxFit.cover,
+            height: 180,
+          ))),
+          Container(
+            width: (widthPantalla - (48)) * 0.50,
+            padding:
+                const EdgeInsets.only(top: 4, bottom: 4, right: 4, left: 4),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2), color: Colors.black12),
+            child: Text(
+              nombre[0].toUpperCase() + nombre.substring(1),
+              style: const TextStyle(fontSize: 18, color: Colors.white),
+            ),
+          )
+        ]),
+      ),
     );
   }
 
