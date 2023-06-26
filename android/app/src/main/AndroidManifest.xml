@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shingeki_no_kyojin">
    <application
-        android:label="shingeki_no_kyojin"
+        android:label="Shingeki no Kyojin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
