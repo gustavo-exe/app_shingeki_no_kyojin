@@ -18,9 +18,12 @@ class _ListExpandState extends State<ListExpand> {
 
     return Expanded(
       child: ListView(padding: const EdgeInsets.all(16), children: [
-        const Text(
-          "Ajercito",
-          style: TextStyle(fontSize: 16, color: Colors.white),
+        const Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Text(
+            "Ajercito",
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,7 +112,7 @@ class _ListExpandState extends State<ListExpand> {
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) {
             return DetailPage(
-                theColor: Colors.blueAccent,
+                theColor: Color.fromARGB(255, 80, 121, 178),
                 image: "assets/personajes/$nombre.png",
                 theNombre: nombre,
                 description: descripcion,

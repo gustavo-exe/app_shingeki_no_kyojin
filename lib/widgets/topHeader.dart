@@ -6,7 +6,7 @@ class TopHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: Color.fromARGB(225, 52, 58, 64)),
+      decoration: const BoxDecoration(color: Color.fromARGB(255, 53, 19, 3)),
       child: Padding(
         padding:
             const EdgeInsets.only(top: 34, left: 16, right: 16, bottom: 16),

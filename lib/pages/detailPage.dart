@@ -27,12 +27,12 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     debugPrint(image);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(153, 111, 81, 1),
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [theColor, Colors.black],
+                colors: [theColor, Color.fromRGBO(153, 111, 81, 1)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -52,7 +52,8 @@ class DetailPage extends StatelessWidget {
                   child: Container(
                       padding: const EdgeInsets.only(
                           top: 8, left: 8, right: 8, bottom: 16),
-                      decoration: const BoxDecoration(color: Colors.black),
+                      decoration: const BoxDecoration(
+                          color: Color.fromRGBO(153, 111, 81, 1)),
                       width: MediaQuery.of(context).size.width,
                       child: Text(
                         theNombre[0].toUpperCase() + theNombre.substring(1),
@@ -65,7 +66,8 @@ class DetailPage extends StatelessWidget {
             ],
           ),
           Container(
-            decoration: const BoxDecoration(color: Colors.black),
+            decoration:
+                const BoxDecoration(color: Color.fromRGBO(153, 111, 81, 1)),
             padding: const EdgeInsets.all(8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
