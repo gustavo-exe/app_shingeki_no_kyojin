@@ -40,12 +40,28 @@ class _ListExpandState extends State<ListExpand> {
         Row(
           children: [
             Column(
-              children: [cardPersonaje("mikasa")],
+              children: [
+                cardPersonaje(
+                    "mikasa",
+                    "Mikasa Ackerman, una experta en todas las áreas. Su talento no tiene precedentes y es considerada una de los mejores alumnos de nuestra historia",
+                    "A+",
+                    "176 cm",
+                    "68 kg",
+                    "Soldado de élite")
+              ],
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Column(
-                children: [cardPersonaje("eren")],
+                children: [
+                  cardPersonaje(
+                      "eren",
+                      "Eren Jaeger, aunque carece de algún talento excepcional, mejoró sus calificaciones a través de una gran perseverancia, además posee una excepcional determinación.",
+                      "A",
+                      "183 cm",
+                      "63 kg",
+                      "Soldado de élite")
+                ],
               ),
             )
           ],
@@ -55,13 +71,29 @@ class _ListExpandState extends State<ListExpand> {
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Column(
-                children: [cardPersonaje("levi")],
+                children: [
+                  cardPersonaje(
+                      "levi",
+                      "Levi es un genio en el uso de las Maniobra Tridimensionales. Muchos civiles han comentado que el es tan poderoso como 100 soldados juntos.",
+                      "A++",
+                      "160 cm",
+                      "65 kg",
+                      "Soldado")
+                ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0, top: 8),
               child: Column(
-                children: [cardPersonaje('hange')],
+                children: [
+                  cardPersonaje(
+                      'hange',
+                      "Hange era muy apasionada por su trabajo. Era hiperactiva, solía absorberse en el trabajo sin pensar en su seguridad, más que en la documentación de las experiencias.",
+                      "A+",
+                      "170 cm",
+                      "60 kg",
+                      "Comandante")
+                ],
               ),
             )
           ],
@@ -70,15 +102,21 @@ class _ListExpandState extends State<ListExpand> {
     );
   }
 
-  Widget cardPersonaje(String nombre) {
+  Widget cardPersonaje(String nombre, String descripcion, String rango,
+      String altura, String peso, String ocupacion) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) {
             return DetailPage(
-              theColor: Colors.blueAccent,
-              image: "assets/personajes/$nombre.png",
-            );
+                theColor: Colors.blueAccent,
+                image: "assets/personajes/$nombre.png",
+                theNombre: nombre,
+                description: descripcion,
+                peso: peso,
+                ocupacion: ocupacion,
+                rango: rango,
+                altura: altura);
           }),
         );
       },
